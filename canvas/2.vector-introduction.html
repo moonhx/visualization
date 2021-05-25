@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vector</title>
+    <style>
+        .wraper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        canvas {
+            width: 512px;
+            height: 512px;
+        }
+        .tip {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="wraper">
+        <canvas width="512" height="512"></canvas>
+        <div class="tip">
+            <li>可视化之数学知识之基础之向量；</li>
+            <li>向量和数量的概念在高中数学课本都有介绍，最早应用应是在物理中对于力的描述，物理中称之为矢量和标量，这里不啰嗦可以看看之前的“高中数学书”；</li>
+            <li>在这里，通常使用向量表示一个点或者一条线段；</li>
+        </div>
+    </div>
+    <script type="module">
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        const { width, height } = canvas;
+        ctx.translate(width*0.5, height*0.5);
+        ctx.scale(1, -1);
+
+        ctx.fillStyle = 'purple';
+        ctx.arc(10, 10, 3, 0, Math.PI*2);
+        ctx.fill();
+
+    </script>
+</body>
+</html>
