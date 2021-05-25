@@ -27,6 +27,7 @@
             <li>可视化之数学知识之基础之向量；</li>
             <li>向量和数量的概念在高中数学课本都有介绍，最早应用应是在物理中对于力的描述，物理中称之为矢量和标量，这里不啰嗦可以看看之前的“高中数学书”；</li>
             <li>在这里，通常使用向量表示一个点或者一条线段；</li>
+            <li>简单画一下，就那么个意思；</li>
         </div>
     </div>
     <script type="module">
@@ -37,8 +38,15 @@
         ctx.scale(1, -1);
 
         ctx.fillStyle = 'purple';
+        ctx.strokeStyle = 'purple';
+        // O表示原点
+        // 点A  向量OA
         ctx.arc(10, 10, 3, 0, Math.PI*2);
+        // 点B  向量OB
+        ctx.arc(40, 10, 3, 0, Math.PI*2);
         ctx.fill();
+        // AB 向量AB
+        ctx.stroke();
 
     </script>
 </body>
