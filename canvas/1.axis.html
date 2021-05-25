@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axis</title>
+    <style>
+        .wraper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        canvas {
+            width: 512px;
+            height: 512px;
+        }
+        .tip {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="wraper">
+        <canvas width="512" height="512"></canvas>
+        <div class="tip">
+            <li>canvas画布默认坐标系原点在左上方，x轴正方向为右，y轴正方向为下；</li>
+            <li>为符合本人习惯，方便后面各种图形展示，数学公式，曲线等展示效果，所以将原点放在canvas画布中间，y轴正方向朝上；</li>
+            <li>此种方式文字会导致文字内容颠倒，绘制文字需将坐标系转换回去，重新计算坐标；或者采用其他的转化方式</li>
+        </div>
+    </div>
+    <script type="module">
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        const { width, height } = canvas;
+        ctx.translate(width*0.5, height*0.5);
+        ctx.scale(1, -1);
+        
+        ctx.strokeStyle = 'black';
+        // x
+        ctx.beginPath();
+        ctx.moveTo(-width*0.5, 0);
+        ctx.lineTo(width*0.5, 0);
+        ctx.stroke();
+        // y
+        ctx.beginPath();
+        ctx.moveTo(0, -height*0.5);
+        ctx.lineTo(0, height*0.5);
+        ctx.stroke();
+
+    </script>
+</body>
+</html>
